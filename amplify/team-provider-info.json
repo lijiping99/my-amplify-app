@@ -10,6 +10,20 @@
       "StackName": "amplify-amplifyd8bd4c0781544-staging-11110",
       "StackId": "arn:aws:cloudformation:us-east-2:938986811848:stack/amplify-amplifyd8bd4c0781544-staging-11110/80ba3790-8fba-11ed-9d8e-0ad43c377902",
       "AmplifyAppId": "dfjtavhzwb4y9"
+    },
+    "categories": {
+      "function": {
+        "myamplifyapp86490216": {
+          "deploymentBucketName": "amplify-amplifyd8bd4c0781544-staging-11110-deployment",
+          "s3Key": "amplify-builds/myamplifyapp86490216-725141473341616a4239-build.zip"
+        }
+      },
+      "storage": {
+        "marathons": {}
+      },
+      "api": {
+        "api4ae2a13d": {}
+      }
     }
   }
 }

@@ -1,0 +1,14 @@
+{
+  "resourceName": "marathons",
+  "tableName": "marathons",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "time",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

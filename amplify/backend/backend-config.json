@@ -1,1 +1,63 @@
-{}
+{
+  "api": {
+    "api4ae2a13d": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "myamplifyapp86490216"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "myamplifyapp86490216": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "marathons"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_myamplifyapp86490216_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myamplifyapp86490216"
+        }
+      ]
+    },
+    "AMPLIFY_function_myamplifyapp86490216_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myamplifyapp86490216"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "marathons": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

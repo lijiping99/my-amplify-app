@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/marathons": {
+      "name": "/marathons",
+      "lambdaFunction": "myamplifyapp86490216",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
