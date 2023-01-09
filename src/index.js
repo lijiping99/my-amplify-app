@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
 export default function App() {
   return (
