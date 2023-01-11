@@ -1,43 +1,13 @@
-const AWS = require('aws-sdk');
-const docClient = new AWS.DynamoDB.DocumentClient();
-
-async function createItem(params){
-  try {
-    await docClient.put(params).promise();
-  } catch (err) {
-    console.log(err);
-    return err;
-  }
-}
-/*
-* runner
-* marathon
-* gender
-* time
-* year
-* age
-*/
+const { createMarathon } = require('./dynamodbHandler');
 
 exports.handler = async (event) => {
     console.log(event)
-    const customerId = event.pathParameters.marathonId;
-    const body = JSON.parse(event.body);
-    const customer = {'customerId': customerId, 'customerName': "Customer " + customerId };
+    
+    if(event.httpMethod='POST'){
 
-    const params = {
-        TableName : 'marathons',
-        
-        Item: {
-           runner: body.name,
-           marathon: body.marathon,
-           gender: body.gender,
-           time: body.time,
-           date: body.date,
-           age: body.age
-        }
-      }
+    await createMarathon(event);
 
-      await createItem(params);
+    }
 
     const response = {
         statusCode: 200,
@@ -46,7 +16,8 @@ exports.handler = async (event) => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*"
         }, 
-        body: JSON.stringify(customer),
+        body: "success",
     };
     return response;
+    
 };

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "paths": {
-    "/marathons/{marathonId}": {
-      "name": "/marathons/{marathonId}",
+    "/marathons/{runner}": {
+      "name": "/marathons/{runner}",
       "lambdaFunction": "marathonHandler",
       "permissions": {
         "setting": "open"

@@ -3,19 +3,11 @@ import './App.css';
 import Amplify, { API } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 
-const myAPI = "apia80f2aef"
+const myAPI = "api2564fff2"
 const path = '/marathons'; 
 
 const App = () => {
 
-  /*
-  const [name, setName] = useState("")
-  const [marathon, setMarathon] = useState("")
-  const [gender, setGender] = useState("")
-  const [time, setTime] = useState("")
-  const [date, setDate] = useState("")
-  const [age, setAge] = useState("")
- */
   const [inputs, setInputs] = useState({});
  
   const handleChange = (event) => {
@@ -27,16 +19,16 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
-    getMarathon(inputs);
+    postMarathon(inputs);
   }
 
   const [marathons, setMarathons] = useState([])
 
-  //Function to fetch from our backend and update customers array
-  function getMarathon(e) {
+  //Function to post from our backend and update customers array
+  function postMarathon(e) {
     let marathonId = e.input
-    
-    API.post(myAPI, path + "/" + marathonId,{body: e,headers: {}})
+
+    API.post(myAPI, path,{body: e,headers: {}})
        .then(response => {
          console.log(response)
          let newMarathons = [...marathons]
@@ -61,7 +53,7 @@ const App = () => {
         </div>
         <div>
         <label>marathon city:</label>
-        <input placeholder="" type="text" name="marathon" value={inputs.marathon || ""} onChange={handleChange}/>           
+        <input placeholder="Boston" type="text" name="marathon" value={inputs.marathon || ""} onChange={handleChange}/>           
         </div>
         <div>
         <label>marathon date:</label>
