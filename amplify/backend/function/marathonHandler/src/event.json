@@ -1,6 +1,14 @@
 {
   "pathParameters":{
     "marathonId":100
+  },
+  "body":{
+    "runner": "J.P",
+    "marathon": "Carmel",
+    "gender": "M",
+    "time": 10000,
+    "date": "20020202",
+    "age": 56
   }
   
 }

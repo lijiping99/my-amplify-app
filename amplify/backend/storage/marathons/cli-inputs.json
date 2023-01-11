@@ -1,0 +1,14 @@
+{
+  "resourceName": "marathons",
+  "tableName": "marathons",
+  "partitionKey": {
+    "fieldName": "marathon_id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "marathon_name",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
