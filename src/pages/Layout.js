@@ -13,7 +13,7 @@ const Layout = () => {
             <Link to="/register">Register Your Marathon Record</Link>
           </li>
           <li>
-            <Link to="/marathons">Marathons Ranking</Link>
+            <Link to="/marathons">Marathons Rankings</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

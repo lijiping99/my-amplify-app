@@ -22,7 +22,7 @@ const RegisterMarathon = () => {
     postMarathon(inputs);
   }
 
-  const [marathons, setMarathons] = useState([])
+  const [status, setStatus] = useState("")
 
   //Function to post from our backend and update customers array
   function postMarathon(e) {
@@ -30,11 +30,8 @@ const RegisterMarathon = () => {
 
     API.post(myAPI, path,{body: e,headers: {}})
        .then(response => {
-         console.log(response)
-         let newMarathons = [...marathons]
-         newMarathons.push(response)
-         setMarathons(newMarathons)
-
+         console.log("api response: "+response)
+         setStatus(response)
        })
        .catch(error => {
          console.log(error)
@@ -75,17 +72,7 @@ const RegisterMarathon = () => {
             </form>
           </div>
           <br/>
-          
-    
-          <h2 style={{visibility: marathons.length > 0 ? 'visible' : 'hidden' }}>Response</h2>
-          {
-           marathons.map((thisMarathon, index) => {
-             return (
-            <div key={thisMarathon.marathonId}>
-              <span><b>MarathonId:</b> {thisMarathon.customerId} - <b>MarathonName</b>: {thisMarathon.customerName}</span>
-            </div>)
-           })
-          }
+          Register Status: {status}
         </div>
       )
   };

@@ -33,6 +33,19 @@ async function createMarathon(event){
     return err;
   }
 }
+async function getMarathons(event){
+    try {
+        var params = {
+            TableName: 'marathons'
+        };
+        var result = await docClient.scan(params).promise()
+        console.log("Items="+JSON.stringify(result.Items))
+        return result.Items;
+    } catch (error) {
+        console.error(error);
+    }
+  }
 
 exports.createMarathon = createMarathon;
+exports.getMarathons = getMarathons;
 
