@@ -3,7 +3,7 @@ import './App.css';
 import Amplify, { API } from 'aws-amplify'
 import React, { useEffect, useState } from 'react'
 
-const myAPI = "api2564fff2"
+const myAPI = "apia8c750ec"
 const path = '/marathons'; 
 
 const App = () => {

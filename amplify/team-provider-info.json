@@ -15,7 +15,7 @@
       "function": {
         "marathonHandler": {
           "deploymentBucketName": "amplify-myamplifyapp-dev-163951-deployment",
-          "s3Key": "amplify-builds/marathonHandler-7a686a6566577a6b7265-build.zip"
+          "s3Key": "amplify-builds/marathonHandler-76476446586a6f455763-build.zip"
         }
       },
       "hosting": {
@@ -28,7 +28,7 @@
         "marathons": {}
       },
       "api": {
-        "api2564fff2": {}
+        "apia8c750ec": {}
       }
     }
   }

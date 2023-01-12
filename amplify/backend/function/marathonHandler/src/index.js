@@ -3,7 +3,7 @@ const { createMarathon } = require('./dynamodbHandler');
 exports.handler = async (event) => {
     console.log(event)
     
-    if(event.httpMethod='POST'){
+    if(event.httpMethod==='POST'){
 
     await createMarathon(event);
 
@@ -14,7 +14,8 @@ exports.handler = async (event) => {
     //  Uncomment below to enable CORS requests
         headers: {
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
         }, 
         body: "success",
     };
