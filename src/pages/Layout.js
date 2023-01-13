@@ -5,20 +5,13 @@ const Layout = () => {
     <>
        <h1>Super Simple Marathon Ranking App</h1>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/register">Register Your Marathon Record</Link>
-          </li>
-          <li>
-            <Link to="/marathonsrankings">Marathons Rankings</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
+            <Link to="/">Home</Link><br/>
+          
+            <Link to="/register">Register Your Marathon Record</Link><br/>
+          
+            <Link to="/marathonsrankings">Marathons Rankings</Link><br/>
+         
+            <Link to="/contact">Contact</Link><br/>
       </nav>
 
       <Outlet />

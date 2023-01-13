@@ -58,7 +58,7 @@ const RegisterMarathon = () => {
             </div>
             <div>
             <label>finish time:</label>
-            <input placeholder="hh:mm:ss" type="text" name="time" value={inputs.time || ""} onChange={handleChange}/>     
+            <input placeholder="total seconds" type="text" name="time" value={inputs.time || ""} onChange={handleChange}/>     
             </div>
             <div>
             <label>your gender:</label>
