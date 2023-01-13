@@ -13,6 +13,7 @@ import RegisterMarathon from "./pages/RegisterMarathon";
 
 import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
+import MarathonsRankings from './pages/MarathonsRanking';
 Amplify.configure(awsExports);
 
 export default function App() {
@@ -21,9 +22,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="marathons" element={<Marathons />} />
+          <Route path="marathons/:gender?" element={<Marathons />} />
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<RegisterMarathon />} />
+          <Route path="marathonsrankings" element={<MarathonsRankings />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

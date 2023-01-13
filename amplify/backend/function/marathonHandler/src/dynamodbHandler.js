@@ -34,11 +34,35 @@ async function createMarathon(event){
   }
 }
 async function getMarathons(event){
-    try {
-        var params = {
-            TableName: 'marathons'
+    console.log("path="+event.path);
+    let gender,params,result
+    let paths = event.path.split("/");
+    if(paths.length>2){
+        gender = paths[2];
+    }
+    let table = "marathons";
+    if (gender) {
+        params = {
+        TableName : table,
+        IndexName : 'gender-index',
+        KeyConditionExpression : 'gender = :genderVal', 
+        ExpressionAttributeValues : {
+          ':genderVal' : gender        
+        }
+      };
+    }else{
+        params = {
+            TableName: table
         };
-        var result = await docClient.scan(params).promise()
+    }
+
+    try {
+        if(gender){
+            result = await docClient.query(params).promise();
+        }else{
+            result = await docClient.scan(params).promise()
+        }
+        
         console.log("Items="+JSON.stringify(result.Items))
         return result.Items;
     } catch (error) {
