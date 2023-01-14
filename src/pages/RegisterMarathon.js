@@ -60,11 +60,11 @@ const RegisterMarathon = () => {
             <input placeholder="hh:mm:ss" type="text" name="time" value={inputs.time || ""} onChange={handleChange}/>     
             </div>
             <div>
-            <label>gender:(optional)<br/>if you want want ranking this record based on gender, choose your gender)</label>
+            <label>optional, if you want ranking this record based on gender, choose your gender)</label>
             <input placeholder="M/F" type="text" name="gender" value={inputs.gender || ""} onChange={handleChange}/>     
             </div>
             <div>
-            <label>age when run this marathon:(optional)<br/>if you want want ranking this record based on age, input your age)</label>
+            <label>optional,if you want ranking this record based on age, input your age when run this Marathon)</label>
             <input placeholder="35" type="text" name="age" value={inputs.age || ""} onChange={handleChange}/>     
             </div>
             <input type="submit" />
