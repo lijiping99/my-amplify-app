@@ -26,8 +26,7 @@ const RegisterMarathon = () => {
 
   //Function to post from our backend and update customers array
   function postMarathon(e) {
-    let marathonId = e.input
-
+ 
     API.post(myAPI, path,{body: e,headers: {}})
        .then(response => {
          console.log("api response: "+response)
@@ -49,23 +48,23 @@ const RegisterMarathon = () => {
             <input placeholder="your name" type="text" name="name" value={inputs.name || ""} onChange={handleChange}/>    
             </div>
             <div>
-            <label>marathon city:</label>
+            <label>where:</label>
             <input placeholder="Boston" type="text" name="marathon" value={inputs.marathon || ""} onChange={handleChange}/>           
             </div>
             <div>
-            <label>marathon date:</label>
-            <input placeholder="yyyymmdd" type="text" name="date" value={inputs.date || ""} onChange={handleChange}/>     
+            <label>date:</label>
+            <input placeholder="yyyy-mm-dd" type="text" name="date" value={inputs.date || ""} onChange={handleChange}/>     
             </div>
             <div>
             <label>finish time:</label>
-            <input placeholder="total seconds" type="text" name="time" value={inputs.time || ""} onChange={handleChange}/>     
+            <input placeholder="hh:mm:ss" type="text" name="time" value={inputs.time || ""} onChange={handleChange}/>     
             </div>
             <div>
-            <label>your gender:</label>
+            <label>gender:(optional)<br/>if you want want ranking this record based on gender, choose your gender)</label>
             <input placeholder="M/F" type="text" name="gender" value={inputs.gender || ""} onChange={handleChange}/>     
             </div>
             <div>
-            <label>age when run this marathon:</label>
+            <label>age when run this marathon:(optional)<br/>if you want want ranking this record based on age, input your age)</label>
             <input placeholder="35" type="text" name="age" value={inputs.age || ""} onChange={handleChange}/>     
             </div>
             <input type="submit" />

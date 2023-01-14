@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+to do list:
+1. function convertTimeStringToNumber('03:04:23')
+   function convertTimeNumberToString(45670)
+2. Gender Drop down
+3. Home Page to add app introduction, Contat Page to add email
+4. Layout Link All Rankings/Femal Rankings/Male Rankings
+5. Layout Link 30- Rankings/30-50 Rankings/50+ Rankings
+6. Marathon compoment show time as 03:04:23

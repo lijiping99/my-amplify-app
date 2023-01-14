@@ -1,5 +1,5 @@
 const Contact = () => {
-    return <h1>Contact Me</h1>;
+    return <p>contact: lijiping99@gmail.com</p>
   };
   
   export default Contact;

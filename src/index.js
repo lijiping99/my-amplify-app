@@ -22,10 +22,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="marathons/:gender?" element={<Marathons />} />
+          <Route path="marathons/gender/:gender?" element={<Marathons />} />
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<RegisterMarathon />} />
-          <Route path="marathonsrankings" element={<MarathonsRankings />} />
+          <Route path="marathons/age/:ageScope" element={<Marathons />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
