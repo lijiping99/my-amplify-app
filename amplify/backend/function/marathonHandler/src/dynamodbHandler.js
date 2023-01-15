@@ -36,7 +36,7 @@ async function createMarathon(event){
 }
 async function getMarathons(event){
     console.log("path="+event.path);
-    let gender,params,result,ageMin=0,ageMax=100,ageQuery=false;genderQuery=false;
+    let runner,gender,params,result,ageMin=0,ageMax=100,ageQuery=false;genderQuery=false;runnerQuery=false;
     let paths = event.path.split("/");
     if(paths.length>3&&paths.includes("gender")){
         gender = paths[3];genderQuery=true;
@@ -49,12 +49,18 @@ async function getMarathons(event){
             ageMin=51;ageQuery=true
         }
     }
+    if(event.queryStringParameters){
+        runner = event.queryStringParameters.runner
+        if(runner){
+            runnerQuery=true;
+        }
+    }
     let table = "marathons";
 
     params = {
         TableName: table
     };
-    console.log("genderQuery="+genderQuery+" "+"gender="+gender+" "+"ageQuery="+ageQuery+" "+"ageMin="+ageMin+" "+"ageMax="+ageMax);
+    console.log("genderQuery="+genderQuery+" "+"gender="+gender+" "+"ageQuery="+ageQuery+" "+"ageMin="+ageMin+" "+"ageMax="+ageMax+" "+"runnerQuery="+runnerQuery+" "+"runner="+runner);
     if(genderQuery){
         params = {
             TableName : table,
@@ -77,11 +83,23 @@ async function getMarathons(event){
          };
     }
 
+    if(runnerQuery){
+        params = {
+            TableName : table,
+            KeyConditionExpression : 'runner = :runnerVal', 
+            ExpressionAttributeValues : {
+                ':runnerVal' : runner        
+            }
+         };
+    }
+
     try {
         if(genderQuery){
             result = await docClient.query(params).promise();
         }else if(ageQuery){
             result = await docClient.scan(params).promise();
+        }else if(runnerQuery){
+            result = await docClient.query(params).promise();
         }else{
             result = await docClient.scan(params).promise()
         }

@@ -71,10 +71,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 to do list:
-1. function convertTimeStringToNumber('03:04:23')
-   function convertTimeNumberToString(45670)
-2. Gender Drop down
-3. Home Page to add app introduction, Contat Page to add email
-4. Layout Link All Rankings/Femal Rankings/Male Rankings
-5. Layout Link 30- Rankings/30-50 Rankings/50+ Rankings
-6. Marathon compoment show time as 03:04:23
+1. function convertTimeStringToNumber('03:04:23') -->done
+   function convertTimeNumberToString(45670) -->done
+2. Gender Drop down -->done
+3. Home Page to add app introduction, Contat Page to add email -->done
+4. Layout Link All Rankings/Femal Rankings/Male Rankings -->done
+5. Layout Link 30- Rankings/30-50 Rankings/50+ Rankings -->done
+6. Marathon compoment show time as 03:04:23 -->done
+7. add search by name function -->done

@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import {useState,useEffect} from 'react';
 import Amplify, { API } from 'aws-amplify'
-import { useParams } from "react-router-dom"
+import { useParams, useSearchParams } from "react-router-dom"
 
 const myAPI = "apia8c750ec"
 
@@ -14,15 +14,24 @@ const Marathons = () => {
     const { gender,ageScope } = useParams();
 
     const [ data, setData ] = useState([]);
-   
+
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const runner = searchParams.get('runner')
+   /*
     console.log("path variable gender ="+gender);
     console.log("path variable scope ="+ageScope);
+    console.log("query parameters runner="+runner);
+   */
 
     if(gender){
         path = path+"/gender/"+gender;
     }
     if(ageScope){
-        path = path+"/age/"+ageScope
+        path = path+"/age/"+ageScope;
+    }
+    if(runner){
+        path = path+"?runner="+runner;
     }
     useEffect(() => {
         async function getMarathons() {
@@ -45,23 +54,22 @@ const Marathons = () => {
 
     getMarathons();
 
-    },[gender,ageScope]);
+    },[gender,ageScope,searchParams]);
 
     return (
         <div>
         <table>
-            {/*
             <thead>
             <tr>
+                <th>rank</th>
                 <th>runner</th>
-                 <th>marathon</th>
+                <th>time</th>
+                 <th>where</th>
                  <th>date</th>
-                 <th>time</th>
                  <th>gender</th>
                  <th>age</th>
             </tr>
             </thead>
-            */}
             <tbody>
             {data.map(marathon => {
                     rank = rank+1
@@ -81,39 +89,7 @@ const Marathons = () => {
         </table> 
         </div>
     );
-    
-   /*
-    return (
-        <div>
-        <table>
-            <thead>
-            <tr>
-                <th>runner</th>
-                 <th>marathon</th>
-                 <th>date</th>
-                 <th>time</th>
-                 <th>gender</th>
-                 <th>age</th>
-            </tr>
-            </thead>
-            <tbody>
-            {data.map(marathon => {
-                return (            
-            <tr>
-                <td>{marathon.runner}</td>
-                <td>{marathon.marathon}</td>
-                <td>{marathon.date}</td>
-                <td>{marathon.time}</td>
-                <td>{marathon.gender}</td>
-                <td>{marathon.age}</td>
-            </tr>
-            );
-         })}
-         </tbody>
-        </table> 
-        </div>
-    );
-    */
+
   };
 
   const getTimeString = (time) =>{

@@ -61,7 +61,14 @@ const RegisterMarathon = () => {
             </div>
             <div>
             <label>optional, if you want ranking this record based on gender, choose your gender)</label>
+            <select name="gender" onChange={handleChange}>
+               <option value="" selected></option>
+               <option value="M">Male</option>
+               <option value="F">Female</option>
+            </select>
+            {/*
             <input placeholder="M/F" type="text" name="gender" value={inputs.gender || ""} onChange={handleChange}/>     
+            */}
             </div>
             <div>
             <label>optional,if you want ranking this record based on age, input your age when run this Marathon)</label>
