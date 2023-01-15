@@ -8,6 +8,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Marathons from "./pages/Marathons";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NoPage from "./pages/NoPage";
 import RegisterMarathon from "./pages/RegisterMarathon";
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="marathons/gender/:gender?" element={<Marathons />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
           <Route path="register" element={<RegisterMarathon />} />
           <Route path="marathons/age/:ageScope" element={<Marathons />} />
           <Route path="*" element={<NoPage />} />
